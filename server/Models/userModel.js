@@ -6,16 +6,16 @@ const jwt = require('jsonwebtoken');
 const userSchema = new mongoose.Schema ({
     fullname: {
         firstname: {
-            type:String,
+            type:string,
             required:true,
-            minlenght:[3,'First name must be atleast of 3 characters']
+            minlength:[3,'First name must be atleast of 3 characters']
         },
         lastname: {
             type:String,
             required:true,
             minlenght:[3, 'Last name must be  atleast of 3 characters']
 
-        },
+        }, 
     },
         email:{
             type:string,
@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema ({
 // Methods for Auth
 
 userSchema.methods.generateAuthToken = function (){
-    const token = jwt.sign({_id: this._id} ,proccess.env.JWT_SECRET)
+    const token = jwt.sign({_id: this._id} ,process.env.JWT_SECRET)
     return token;
 
 }
@@ -55,6 +55,6 @@ userSchema.methods.comparePassword = async function (password) {
 
  }
 
- const userModel = mongoose.model('model' , userSchema)
+ const userModel = mongoose.model( 'User' , userSchema)
 
  module.exports = userModel ;
