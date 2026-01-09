@@ -76,3 +76,8 @@ created controller for writting the logic for userModel .
 creating APIs for user in routes folder 
 also gonna use the express validator
 npm install express validator    
+
+
+# Frontend Routing 
+
+npm i react-router-dom // to enable routing ( moving from one page to another)
